@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
-    int number;
+    srand(time(NULL));
+
+    int number = (rand() % 100) + 1;
     int guess;
     int amount = 0;
-
-    printf("Enter the number to guess: ");
-    scanf("%d", &number);
 
     while (1) {
         printf("\nGuess a number between 1-100: ");
