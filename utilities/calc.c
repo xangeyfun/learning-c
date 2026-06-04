@@ -1,20 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    float num1;
-    float num2;
+    double num1;
+    double num2;
     char op;
-    float result;
+    double result;
 
     while (1) {
         printf("Enter first number: ");
-        scanf("%f", &num1);
+        scanf("%lf", &num1);
 
         printf("Enter operator: ");
         scanf(" %c", &op);
 
         printf("Enter second number: ");
-        scanf("%f", &num2);
+        scanf("%lf", &num2);
 
         if (op == '+') {
             result = num1 + num2;
