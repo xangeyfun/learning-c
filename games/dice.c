@@ -16,7 +16,10 @@ int roll_dice(int sides) {
         return 0;
     }
 
-    int roll = rand() % sides + 1;
+    int roll;
+
+    roll = (rand() % sides) + 1;
+
     return roll;
 }
 
@@ -41,9 +44,19 @@ int main() {
             int sides;
             printf("\n/- How many sides does the die have? ");
             printf("\n$> ");
-            scanf("%d", &sides);
-            int result = roll_dice(sides);
-            printf("\nYou rolled a %d!\n", result);
+            scanf(" %d", &sides);
+
+            int rolls;
+            printf("\n/- How many times to roll the dice? ");
+            printf("\n$> ");
+            scanf(" %d", &rolls);
+
+            for (int i = 0; i < rolls; i++) {
+                int result = roll_dice(sides);
+                printf("\nYou rolled a %d!", result);
+            }
+            printf("\n");
         }
     }
+    return 0;
 }
