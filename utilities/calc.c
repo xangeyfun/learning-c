@@ -7,14 +7,19 @@ int main() {
     double result;
 
     while (1) {
-        printf("Enter first number: ");
-        scanf("%lf", &num1);
+        printf("/- Enter first number:\n");
+        printf("$> ");
+        scanf(" %lf", &num1);
 
-        printf("Enter operator: ");
+        printf("\n/- Enter operator: (+ - * /)\n");
+        printf("$> ");
         scanf(" %c", &op);
 
-        printf("Enter second number: ");
-        scanf("%lf", &num2);
+        printf("\n/- Enter second number:\n");
+        printf("$> ");
+        scanf(" %lf", &num2);
+
+        printf("\n");
 
         if (op == '+') {
             result = num1 + num2;
@@ -43,7 +48,8 @@ int main() {
 
         char con;
 
-        printf("\nContinue? (y|n)");
+        printf("\n\n/- Continue? (y|n)\n");
+        printf("$> ");
         scanf(" %c", &con);
 
         if (con == 'n') {
