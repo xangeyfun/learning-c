@@ -1,30 +1,29 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    if (argv[1] == NULL) {
+    if (argc < 2) {
         printf("Usage:\ncat <filename>\n");
         return 1;
     }
 
-    if (argc > 2) {
-        printf("cat: Too many arguments\n");
-        return 1;
+    int c;
+
+    for (int i = 1; i < argc; i++) {
+        FILE* file = fopen(argv[i], "r");
+    
+        if (file == NULL) {
+            printf("cat: %s: No such file or directory\n", argv[i]);
+            continue;
+        }
+
+        while ((c = fgetc(file)) != EOF) {
+            putchar(c);
+        }
+
+        printf("\n");
+
+        fclose(file);
     }
-
-    FILE* file = fopen(argv[1], "r");
-
-    if (file == NULL) {
-        printf("cat: %s: No such file or directory\n", argv[1]);
-        return 1;
-    }
-
-    char c;
-
-    while ((c = fgetc(file)) != EOF) {
-        printf("%c", c);
-    }
-
-    printf("\n");
 
     return 0;
 }
