@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
 
     if (file == NULL) {
         printf("File not found!");
+        return 1;
     }
 
     char c;
